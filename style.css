@@ -8,9 +8,13 @@
 body{
 	background-color: #f8f8f8;
 }
+button{
+	border: none;
+	outline: none;
+}
 #container{
 	margin: 10px;
-	width: 500px;
+	width: 300px;
 }
 .skills{
 	background-color: #fff;
@@ -18,6 +22,14 @@ body{
 	height: 130px;
 	margin: 5px 0px;
 	width: 300px;
+}
+.diode{
+	background-color: #c00;
+	border-radius: 7px;
+	float: left;
+	height: 14px;
+	margin: 13px 10px;
+	width: 14px;
 }
 h3{
 	border-bottom: 1px solid #ccc;
@@ -27,7 +39,6 @@ h3, .time{
 	height: 40px;
 	line-height: 40px;
 	margin: auto;
-	padding: 0px 10px;
 	width: 280px;
 }
 .hidden{
@@ -36,18 +47,34 @@ h3, .time{
 .time{
 	font-size: 14px;
 }
-button{
-	background-color: #0a0;
-	border: none;
+.start, .zero{
 	border-radius: 4px;
 	color: #fff;
+	float: left;
+}
+.start{
+	background-color: #0a0;
 	font-size: 20px;
 	height: 40px;
 	margin: 0px 10px;
-	outline: none;
 	width: 100px;
 }
-button:hover{
+.start:hover{
 	background-color: #0b0;
 	cursor: pointer;
+}
+.zero{
+	background-color: #a00;
+	height: 30px;
+	margin: 5px 0px;
+	width: 60px;
+}
+.zero:hover{
+	background-color: #b00;
+	cursor: pointer;
+}
+#info{
+	color: #888;
+	font-size: 10px;
+	text-align: center;
 }
