@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +48,27 @@
 			<button class="zero">Zeruj</button>
 		</div>
 		<p id="info">Przycisk "Zeruj" jest dostępny po zatrzymaniu licznika</p>
+		<form action="/time-counter/import.php" method="post">
+			<input type="hidden" value="0.00" name="php">
+			<input type="hidden" value="0.00" name="javascript">
+			<input type="hidden" value="0.00" name="sql">
+			<input type="password" name="password">
+			<input type="submit" value="Import" name="send">
+			<?php
+			if(isset($_SESSION['statement'])){
+			?>
+			<p><?php echo $_SESSION['statement']; ?></p>
+			<?php
+			unset($_SESSION['statement']);	
+			}
+			else if(isset($_SESSION['error'])){
+			?>
+			<p><?php echo $_SESSION['error']; ?></p>
+			<?php	
+			unset($_SESSION['error']);
+			}
+			?>
+		</form>
 	</div>
 </body>
 </html>

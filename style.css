@@ -69,6 +69,9 @@ h3, .time{
 	margin: 5px 0px;
 	width: 60px;
 }
+.zero:disabled{
+	opacity: 0.2;
+}
 .zero:hover{
 	background-color: #b00;
 	cursor: pointer;

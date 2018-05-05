@@ -1,9 +1,10 @@
 window.onload = function(){
-	var zero = document.getElementsByClassName('zero');
 	var start = document.getElementsByClassName('start');
+	var zero = document.getElementsByClassName('zero');
 	for(var i = 0; i < 3; i++){
 		let index = i;
 		start[i].addEventListener('click', function(){changeStatus(index)});
+		zero[index].disabled = true;
 		zero[i].addEventListener('click', function(){clear(index)});
 	}
 	time();
@@ -11,11 +12,11 @@ window.onload = function(){
 function changeStatus(index){
 	var seconds = new Date();
 	var addTime = document.getElementsByClassName('time');	
-	var zero = document.getElementsByClassName('zero');
 	var mseconds = document.getElementsByClassName('miliseconds');
 	var start = document.getElementsByClassName('start');
 	var status = document.getElementsByClassName('status');
 	var stop = document.getElementsByClassName('pause');
+	var zero = document.getElementsByClassName('zero');
 	if(status[index].textContent == 0 || status[index].textContent == 2){
 		start[index].textContent = 'Pauza';
 		mseconds[index].textContent = seconds.getTime();
@@ -34,14 +35,17 @@ function clear(index){
 	var addTime = document.getElementsByClassName('time');
 	var status = document.getElementsByClassName('status');
 	var stop = document.getElementsByClassName('pause');
+	var zero = document.getElementsByClassName('zero');
 	stop[index].textContent = 0.00;
 	addTime[index].textContent = '0.00 min';	
 	status[index].textContent = 2; 
+	zero[index].disabled = true;
 }
 function time(){
 	var seconds = new Date();
 	var addTime = document.getElementsByClassName('time');
 	var diode = document.getElementsByClassName('diode');	
+	var input = document.getElementsByTagName('input');
 	var mseconds = document.getElementsByClassName('miliseconds');
 	var status = document.getElementsByClassName('status');
 	var stop = document.getElementsByClassName('pause');
@@ -56,6 +60,7 @@ function time(){
 		else{
 			diode[i].style.backgroundColor = '#ca0';
 		}
+		input[i].value = addTime[i].textContent;
 	}
 	setTimeout(time, 100);
 }
