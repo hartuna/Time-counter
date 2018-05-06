@@ -6,9 +6,9 @@
 	padding: 0px;
 }
 body{
-	background-color: #f8f8f8;
+	background-color: #eee;
 }
-button{
+button, input{
 	border: none;
 	outline: none;
 }
@@ -59,7 +59,7 @@ h3, .time{
 	margin: 0px 10px;
 	width: 100px;
 }
-.start:hover{
+.start:hover, #importTime:hover, #send:hover, #close:hover{
 	background-color: #0b0;
 	cursor: pointer;
 }
@@ -80,4 +80,64 @@ h3, .time{
 	color: #888;
 	font-size: 10px;
 	text-align: center;
+}
+#form{
+	background-color: #fff;
+	border-radius: 4px;
+	height: 110px;
+	margin-top: 5px;
+	position: relative;
+	width: 300px;
+}
+#import{
+	position: absolute;
+	width: 300px;
+}
+#import p{
+	float: left;
+	font-size: 16px;
+	line-height: 110px;
+	margin-left: 10px;
+}
+#importTime{
+	background-color: #0a0;
+	border-radius: 4px;
+	float: right;
+	height: 90px;
+	margin: 10px;
+	width: 90px;
+}
+form{
+	display: none;
+	opacity: 0.00;
+	position: absolute;
+}
+label{
+	color: #888;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0px 10px;
+}
+#password{
+	border: 1px solid #ccc;
+	height: 30px;
+	margin: 0px 10px 10px 10px;
+	padding: 0px 10px;
+	width: 280px;
+}
+#send, #close{
+	border-radius: 4px;
+	float: right;
+	height: 30px;
+	margin: 0px 10px 10px 0px;
+	width: 30px;
+}
+#statement{
+	background-color: #fff;
+	display: none;
+	height: 100%;
+	opacity: 0.00;
+	position: absolute;
+	width: 100%;
 }
