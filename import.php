@@ -5,9 +5,9 @@ if(!isset($_POST['send'])){
 	header('Location: /time-counter/');
 	exit;
 }
-$php = str_replace(' min', '', $_POST['php']);
-$javascript = str_replace(' min', '', $_POST['javascript']);
-$sql = str_replace(' min', '', $_POST['sql']);
+$_SESSION['phpTime'] = $php = str_replace(' min', '', $_POST['php']);
+$_SESSION['javascriptTime'] = $javascript = str_replace(' min', '', $_POST['javascript']);
+$_SESSION['sqlTime'] = $sql = str_replace(' min', '', $_POST['sql']);
 $password = $_POST['password'];
 if($password == $import){
 	$connect = mysqli_connect($dbServer, $dbUser, $dbPassword, $dbName);
@@ -32,6 +32,9 @@ if($password == $import){
 				$connect->query($query);	
 			}
 			$_SESSION['statement'] = 'Dane zostały przesłane';
+			unset($_SESSION['phpTime']);
+			unset($_SESSION['javascriptTime']);
+			unset($_SESSION['sqlTime']);
 		}
 		else{
 			$_SESSION['error'] = 'Brak danych do przesłania';

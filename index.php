@@ -15,11 +15,11 @@ session_start();
 			<div class="diode"></div>
 			<h3>PHP</h3>
 			<div class="hidden">
-				<div class="status">2</div>
+				<div class="status"><?php if(isset($_SESSION['phpTime']) && $_SESSION['phpTime'] != '0.00'){ echo '0'; }else{ echo '2'; } ?></div>
 				<div class="miliseconds">0</div>
-				<div class="pause">0</div>
+				<div class="pause"><?php if(isset($_SESSION['phpTime'])){ echo $_SESSION['phpTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time">0.00 min</div>
+			<div class="time"><?php if(isset($_SESSION['phpTime'])){ echo $_SESSION['phpTime']; }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>
@@ -27,11 +27,11 @@ session_start();
 			<div class="diode"></div>
 			<h3>JavaScript</h3>
 			<div class="hidden">
-				<div class="status">2</div>
+				<div class="status"><?php if(isset($_SESSION['javascriptTime']) && $_SESSION['javascriptTime'] != '0.00'){ echo '0'; }else{ echo '2'; } ?></div>
 				<div class="miliseconds">0</div>
-				<div class="pause">0</div>
+				<div class="pause"><?php if(isset($_SESSION['javascriptTime'])){ echo $_SESSION['javascriptTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time">0.00 min</div>
+			<div class="time"><?php if(isset($_SESSION['javascriptTime'])){ echo $_SESSION['javascriptTime']; }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>
@@ -39,11 +39,11 @@ session_start();
 			<div class="diode"></div>
 			<h3>SQL</h3>
 			<div class="hidden">
-				<div class="status">2</div>
+				<div class="status"><?php if(isset($_SESSION['sqlTime']) && $_SESSION['sqlTime'] != '0.00'){ echo '0'; }else{ echo '2'; } ?></div>
 				<div class="miliseconds">0</div>
-				<div class="pause">0</div>
+				<div class="pause"><?php if(isset($_SESSION['sqlTime'])){ echo $_SESSION['sqlTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time">0.00 min</div>
+			<div class="time"><?php if(isset($_SESSION['sqlTime'])){ echo $_SESSION['sqlTime']; }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>
@@ -60,24 +60,19 @@ session_start();
 				<label for="password">Wprowadź hasło i zatwierdź</label>
 				<input id="password" type="password" name="password">
 				<input id="send" type="submit" value="" name="send">
-				<button id="close"></button>
+				<div id="close"></div>
 			</form>
 			<div id="statement">
-				<p id="result">
-				<?php
-				if(isset($_SESSION['statement'])){
-					echo $_SESSION['statement'];
-					unset($_SESSION['statement']);	
-				}
-				else if(isset($_SESSION['error'])){
-					echo $_SESSION['error'];
-					unset($_SESSION['error']);
-				}
-				else{
-					echo '';
-				}
-				?>	
-				</p>
+			<?php
+			if(isset($_SESSION['statement'])){
+				echo '<p id="result">' . $_SESSION['statement'] . '</p>';
+				unset($_SESSION['statement']);	
+			}
+			else if(isset($_SESSION['error'])){
+				echo '<p id="result">' . $_SESSION['error'] . '</p>';
+				unset($_SESSION['error']);
+			}
+			?>		
 			</div>
 		</div>
 	</div>

@@ -1,7 +1,6 @@
 window.onload = function(){
 	var close = document.getElementById('close');
 	var importTime = document.getElementById('importTime');
-	var result = document.getElementById('result');
 	var start = document.getElementsByClassName('start');
 	var zero = document.getElementsByClassName('zero');
 	for(var i = 0; i < 3; i++){
@@ -12,7 +11,7 @@ window.onload = function(){
 	}
 	importTime.addEventListener('click', function(){showForm(0.00)});
 	close.addEventListener('click', closeForm);
-	if(result.textContent != ''){
+	if(document.getElementById('result') != null){
 		showResult(1.00, 'show');
 	}
 	time();
