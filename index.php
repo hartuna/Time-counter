@@ -8,6 +8,7 @@ session_start();
 	<meta charset="utf-8" />
 	<script src="script.js"></script>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 	<div id="container">
@@ -19,7 +20,7 @@ session_start();
 				<div class="miliseconds">0</div>
 				<div class="pause"><?php if(isset($_SESSION['phpTime'])){ echo $_SESSION['phpTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time"><?php if(isset($_SESSION['phpTime'])){ echo $_SESSION['phpTime']; }else{ echo '0.00'; } ?> min</div>
+			<div class="time"><?php if(isset($_SESSION['phpTime'])){ echo $_SESSION['phpTime']; unset($_SESSION['phpTime']); }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>
@@ -31,7 +32,7 @@ session_start();
 				<div class="miliseconds">0</div>
 				<div class="pause"><?php if(isset($_SESSION['javascriptTime'])){ echo $_SESSION['javascriptTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time"><?php if(isset($_SESSION['javascriptTime'])){ echo $_SESSION['javascriptTime']; }else{ echo '0.00'; } ?> min</div>
+			<div class="time"><?php if(isset($_SESSION['javascriptTime'])){ echo $_SESSION['javascriptTime']; unset($_SESSION['javascriptTime']); }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>
@@ -43,7 +44,7 @@ session_start();
 				<div class="miliseconds">0</div>
 				<div class="pause"><?php if(isset($_SESSION['sqlTime'])){ echo $_SESSION['sqlTime']; }else{ echo '0'; } ?></div>
 			</div>
-			<div class="time"><?php if(isset($_SESSION['sqlTime'])){ echo $_SESSION['sqlTime']; }else{ echo '0.00'; } ?> min</div>
+			<div class="time"><?php if(isset($_SESSION['sqlTime'])){ echo $_SESSION['sqlTime']; unset($_SESSION['sqlTime']); }else{ echo '0.00'; } ?> min</div>
 			<button class="start">Start</button>
 			<button class="zero">Zeruj</button>
 		</div>

@@ -110,7 +110,7 @@ function time(){
 			diode[i].style.backgroundColor = '#c00';
 		}
 		else{
-			diode[i].style.backgroundColor = '#ca0';
+			diode[i].style.backgroundColor = '#fb0';
 		}
 		input[i].value = addTime[i].textContent;
 	}

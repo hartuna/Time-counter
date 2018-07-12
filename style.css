@@ -1,26 +1,28 @@
 @charset 'utf-8';
 *{
 	box-sizing: border-box;
-	font-family: 'Verdana';
+	font-family: 'Segoe UI', 'Verdana';
 	margin: 0px;
 	padding: 0px;
 }
 body{
-	background-color: #eee;
+	background-color: #fff;
 }
 button, input{
 	border: none;
 	outline: none;
 }
 #container{
-	margin: 10px;
+	margin: 10px auto;
 	width: 300px;
 }
 .skills{
 	background-color: #fff;
+	border: 1px solid #ddd;
 	border-radius: 4px;
-	height: 130px;
+	height: 132px;
 	margin: 5px 0px;
+	position: relative;
 	width: 300px;
 }
 .diode{
@@ -59,7 +61,7 @@ h3, .time{
 	margin: 0px 10px;
 	width: 100px;
 }
-.start:hover, #importTime:hover, #send:hover, #close:hover{
+.start:hover, #importTime:hover, #send:hover{
 	background-color: #0b0;
 	cursor: pointer;
 }
@@ -72,19 +74,20 @@ h3, .time{
 .zero:disabled{
 	opacity: 0.2;
 }
-.zero:hover{
+.zero:hover, #close:hover{
 	background-color: #b00;
 	cursor: pointer;
 }
 #info{
 	color: #888;
-	font-size: 10px;
+	font-size: 9px;
 	text-align: center;
 }
 #form{
 	background-color: #fff;
+	border: 1px solid #ddd;
 	border-radius: 4px;
-	height: 110px;
+	height: 112px;
 	margin-top: 5px;
 	position: relative;
 	width: 300px;
@@ -100,7 +103,7 @@ h3, .time{
 	margin-left: 10px;
 }
 #importTime{
-	background-color: #0a0;
+	background: url('./import.png'), #0a0;
 	border-radius: 4px;
 	float: right;
 	height: 90px;
@@ -127,18 +130,25 @@ label{
 	width: 280px;
 }
 #send, #close{
-	background-color: #ddd;
 	border-radius: 4px;
 	float: right;
 	height: 30px;
 	margin: 0px 10px 10px 0px;
 	width: 30px;
 }
+#send{
+	background-color: #0a0;
+}
+#close{
+	background-color: #a00;
+}
 #statement{
 	background-color: #fff;
 	display: none;
 	height: 100%;
+	line-height: 112px;
 	opacity: 0.00;
 	position: absolute;
+	text-align: center;
 	width: 100%;
 }
